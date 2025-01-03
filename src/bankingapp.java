@@ -7,7 +7,7 @@ import java.util.Scanner;
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        System.out.println("HI AFTER");
         var h = new HashMap<Integer, HashMap<String, HashMap<Double, String>>>();
         HashMap<String, HashMap<Double, String>> innerMap = new HashMap<>();
         HashMap<Double, String> lastmap = new HashMap<>();
