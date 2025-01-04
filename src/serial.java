@@ -23,10 +23,7 @@ public class serial {
             student sobj=(student)ins.readObject();
             System.out.println("object De-serialized");
             System.out.println(sobj);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+        } catch (Exception e) {
+                throw new RuntimeException(e);
+        } }
 }
