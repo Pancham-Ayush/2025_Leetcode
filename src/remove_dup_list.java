@@ -4,13 +4,9 @@ import java.util.Set;
 class ListNode {
       int val;
       ListNode next;
-
-      ListNode() {};
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
- public class remove_dup_list {
-    public ListNode deleteDuplicates(ListNode head) {
+      ListNode(int val) { this.val = val;};
+// public class remove_dup_list {
+//    public ListNode deleteDuplicates(ListNode head) {
 //        Set<Integer>s= new HashSet<>();
 //        ListNode re = new ListNode(-1);
 //        ListNode head1= re;
@@ -24,23 +20,33 @@ class ListNode {
 //            head=head.next;
 //        }
 //        return re.next;
-
-ListNode curr=head;
-        while(curr!=null && curr.next!=null)
-     {
-         if(curr.val==curr.next.val)
-         {
-             curr.next=curr.next.next;
-         }
-         else
-         {
-             curr=curr.next;
-         }
-     }
-        return head;
- }
-
+//
+//ListNode curr=head;
+//        while(curr!=null && curr.next!=null)
+//     {
+//         if(curr.val==curr.next.val)
+//         {
+//             curr.next=curr.next.next;
+//         }
+//         else
+//         {
+//             curr=curr.next;
+//         }
+//     }
+//        return head;
+// }
      public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode sec = new ListNode(2);
+        ListNode thr = new ListNode(3);
+        head.next=sec;
+        sec.next=thr;
+        thr.next=null;
+        ListNode temp=head;
 
+        while (temp!=null){
+            System.out.println(temp.val);
+            temp=temp.next;
+        }
      }
 }

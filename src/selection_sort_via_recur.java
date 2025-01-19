@@ -1,26 +1,22 @@
 import java.util.Arrays;
-
-class selection_sort_via_recur {
+ class ArraysExample {
     public static void main(String[] args) {
-        int a[] = {3, 5, 1,22222,0, 2, 33, 0, -1};
-        selection(a, 0,a.length);
-        System.out.println(Arrays.toString(a));
-    }
+        int[] numbers = {30, 10, 40, 20};
 
+        // Sort the array
+        Arrays.sort(numbers);
+        System.out.println("Sorted array: " + Arrays.toString(numbers)); // [10, 20, 30, 40]
 
+        // Check if two arrays are equal
+        int[] numbers2 = {10, 20, 30, 40};
+        System.out.println("Arrays are equal: " + Arrays.equals(numbers, numbers2)); // true
 
+        // Search for an element (binary search requires a sorted array)
+        int index = Arrays.binarySearch(numbers, 30);
+        System.out.println("Index of 30: " + index); // 2
 
-   static void selection(int arr[],int s,int end){
-        if(end<=0)
-            return;
-        int max=s;
-        for (int i=s;i<end-1;i++)
-        {
-            max=(arr[max]>arr[i])?max:i;
-        }
-        int temp =arr[end-1];
-        arr[end-1]=arr[max];
-        arr[max]=temp;
-        selection(arr,s,--end);
+        // Fill the array with a specific value
+        Arrays.fill(numbers, 99);
+        System.out.println("Array after filling: " + Arrays.toString(numbers)); // [99, 99, 99, 99]
     }
 }
