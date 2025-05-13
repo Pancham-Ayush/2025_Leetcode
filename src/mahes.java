@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
 
-public class mahes {
+public void main() {
+    System.out.println("hi");
 }

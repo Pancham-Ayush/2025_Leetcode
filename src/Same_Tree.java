@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
-
-public class Same_Tree {
-}
+//public class Same_Tree {
+//    public boolean isSameTree(TreeNode p, TreeNode q) {
+//
+//    }
+//}

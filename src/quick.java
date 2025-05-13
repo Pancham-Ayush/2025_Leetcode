@@ -4,7 +4,7 @@ import java.util.concurrent.*;
  class ParallelQuickSort extends RecursiveTask<Void> {
     private final int[] arr;
     private final int low, high;
-    private static final int THRESHOLD = 1000;
+    private static final int THRESHOLD = 9000;
 
     public ParallelQuickSort(int[] arr, int low, int high) {
         this.arr = arr;
@@ -66,7 +66,7 @@ import java.util.concurrent.*;
 
         ForkJoinPool pool = ForkJoinPool.commonPool();
 
-        for (int i = 1000; i <= 100_000_000; i += 10000000) {
+        for (int i = 100000; i <= 10000000; i += 100000) {
             int[] arr = new int[i];
 
             for (int j = 0; j < i; j++) {
@@ -75,7 +75,7 @@ import java.util.concurrent.*;
 
             start = System.nanoTime();
 
-            pool.execute(new ParallelQuickSort(arr, 0, i - 1)); // Parallel execution
+            pool.invoke(new ParallelQuickSort(arr, 0, i - 1));  // ✅ Best & fastest method
 
             end = System.nanoTime();
 
