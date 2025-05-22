@@ -1,37 +1,50 @@
-//public class Reverse_Nodes_in_k_Group {
-//    public ListNode reverseKGroup(ListNode head, int k) {
-//        ListNode c= head;
-//        int x=0;
-//        while (c!=null) {
-//            ++x;
-//            c = c.next;
-//        }
-//        ListNode temp = head;
-//        ListNode r=null;
-//        while (x>=k)
-//        {   ListNode h1=temp;
-//            ListNode l1=temp;
-//            for (int i =0;i<k;i++){
-//                l1=l1.next;
-//            }
-//            ListNode h2=l1.next;
-//            l1.next=null;
-//            ListNode
-//
-//        }
-//        return null;
-//
-//    }
-//    public ListNode reverseList(ListNode head) {
-//
-//        ListNode prev =null;
-//        while (head!=null){
-//            ListNode next = head.next;
-//            ListNode cur = head;
-//            cur.next=prev;
-//            prev=cur;
-//            head = next;
-//        }
-//        return head;
-//    }
-//}
+import java.util.ArrayList;
+
+public class Reverse_Nodes_in_k_Group {
+    public ListNode reverseKGroup(ListNode head, int k) {
+
+        ListNode ch=null,ct=null;
+        ListNode th=null,tt=null;
+        ListNode temp =head;
+        int count =0;
+        while (temp!=null){
+            temp=temp.next;
+            count++;
+        }
+        temp =head;
+        ListNode next;
+        while (count>0){
+            if(count<k)
+                break;
+            for (int i =0;i<k;i++){
+                next=temp.next;
+                if(th==null){
+                    th=tt=temp;
+                }
+                else {
+                    temp.next=th;
+                    th=temp;
+
+                }
+                temp=next;
+            }
+            if(ch==null){
+                ch =th;
+                ct=tt;
+            }
+            else {
+                ct.next=th;
+                ct=tt;
+            }
+            th=tt=null;
+            count-=k;
+
+        }
+        if(temp!=null)
+            ct.next=temp;
+
+
+        return ch;
+    }
+
+}
