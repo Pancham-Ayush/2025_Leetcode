@@ -42,8 +42,6 @@ public class Reverse_Nodes_in_k_Group {
         }
         if(temp!=null)
             ct.next=temp;
-
-
         return ch;
     }
 
