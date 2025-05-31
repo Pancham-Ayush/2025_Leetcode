@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class N_Queens {
+//
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new ArrayList<>();
         int[][] board = new int[n][n];
