@@ -12,6 +12,7 @@ public class Integer_to_English_Words {
         StringBuilder s = new StringBuilder();
         String nums =String.valueOf(num);
         int x=0;
+        return nums;
     }
     String helper(int n,String num,int ind ){
         int y=Integer.valueOf(num.charAt(ind));
@@ -24,5 +25,7 @@ public class Integer_to_English_Words {
             return belowTwenty[y-1]+" "+thousands[1];
         else if(pos==6)
             return belowTwenty[y-1]+" "+thousands[0];
+
+        return num;
     }
 }
