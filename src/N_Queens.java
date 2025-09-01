@@ -20,6 +20,7 @@ public class N_Queens {
                 helper(n+1,board,result);
                 board[n][i]=0;
             }
+
         }
 
     }
