@@ -6,19 +6,17 @@ public class move_0 {
         int n=0;
         for(int i=0;i<nums.length;i++){
             if(nums[i]!=0){
-                nums[n]=nums[i];
-                n++;
+                int temp = nums[i];
+                nums[i]=0;
+                nums[n++]=temp;
             }
         }
-        while(n<nums.length){
-            nums[n]=0;
-            n++;
-        }
+
         System.out.println(Arrays.toString(nums));
     }
 
     public static void main(String[] args) {
-        int a[]={0,1,0,3,12};
+        int a[]={1,3,12};
         moveZeroes(a);
 
     }

@@ -1,21 +1,18 @@
 public class Flatten_Binary_Tree_to_Linked_List {
-    TreeNode tail;
+
+    TreeNode temp;
     public void flatten(TreeNode root) {
-        TreeNode temp=new TreeNode(0);
-        tail=temp;
+        temp= new TreeNode();
         helper(root);
     }
-    void  helper(TreeNode cur){
-        if(cur==null) return;
-        tail.right=cur;
-        tail.left=null;
-        tail=cur;
-        TreeNode left=cur.left;
-        TreeNode right=cur.right;
-        tail.left=null;
-        cur.left=null;
+    void helper(TreeNode root){
+        if(root==null)
+            return;
+
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+        temp=root;
         helper(left);
         helper(right);
-
     }
 }
